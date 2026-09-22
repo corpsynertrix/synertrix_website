@@ -96,7 +96,62 @@ function Platforms() {
           </button>
 
         </div>
+ {/* ================================
+          TRUSTED PARTNERS
+      ================================= */}
 
+      <div className="container">
+
+        <div className="trusted-partners reveal">
+
+          {/* HEADER */}
+          <div className="trusted-partners-header">
+
+            <span className="trusted-partners-label">
+              TRUSTED PARTNERS
+            </span>
+
+            <h3>
+              Strategic <em>platform partnerships.</em>
+            </h3>
+
+            <p>
+              Trusted platforms that extend our capabilities across
+              business operations, automation, and enterprise transformation.
+            </p>
+
+          </div>
+
+
+          {/* LOGOS */}
+          <div className="trusted-partners-logos">
+
+            {/* ZOHO */}
+            <div className="trusted-partner-logo">
+
+              <img
+                src={A + "Tech Logos/zoho.png"}
+                alt="Zoho"
+              />
+
+            </div>
+
+
+            {/* ODOO */}
+            <div className="trusted-partner-logo">
+
+              <img
+                src={A + "Tech Logos/odoo-official-partner.png"}
+                alt="Odoo"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
       </div>
     </section>
   );

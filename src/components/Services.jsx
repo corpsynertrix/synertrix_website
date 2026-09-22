@@ -7,9 +7,10 @@ function Services() {
     {
     title: "Cloud Modernization",
     desc: [
-      "Your business didn't stand still — your infrastructure shouldn't either. Every hour your team spends fighting infrastructure is an hour not spent on product.",
-      "We start by understanding where you are today: the systems holding you back, the costs quietly piling up, the growth you're planning for tomorrow.",
-      "Then we build the path forward — migrating, re-architecting, and optimizing your cloud environment so it works for you, not against you.",
+      "Your business didn't stand still — your infrastructure shouldn't either.",
+      "Every hour your team spends fighting infrastructure is an hour not spent on growth.",
+      "Starts with understanding: what's slowing you down, what it's costing you, and where you want to grow.",
+      "From there, we build the path forward: migrating, re-architecting, and optimizing your cloud so it finally works for you.",
     ],
     closing: "Let's talk about where you are, and where you want to be.",
     small: "Modern platforms • Scalable architecture • Optimization",
@@ -18,7 +19,7 @@ function Services() {
     title: "Data Engineering",
     desc: [
       "Your data already knows things you don't, it's just scattered across systems that don't talk to each other.",
-      "We start by understanding how your business actually makes decisions today, then build the pipelines, warehouses, and infrastructure that turn raw, fragmented data into something your teams can trust and act on in real time.",
+      "First, we understand your business. Then we build the pipelines, warehouses, and infrastructure that turn messy, fragmented data into something you can trust.",
       "This isn't about collecting more data. It's about making the data you already have finally work for you.",
     ],
     closing: "Let's find out what your data has been trying to tell you.",
@@ -28,8 +29,9 @@ function Services() {
     title: "Data Analytics",
     desc: [
       "Data is only valuable the moment someone actually uses it to make a decision.",
-      "We work alongside your teams to understand the questions that actually keep you up at night — then build the dashboards, models, and insights that answer them, not the ones a generic report happens to show.",
-      "This isn't about more charts. It's about clarity — knowing what happened, why it happened, and what to do next.",
+      "We work alongside your teams to understand the questions that actually keep you up at night.",
+      "Then we build the models, dashboards, and insights that answer your questions — not the ones a generic report happens to show.",
+      "This isn't about more charts. It's about clarity, knowing what happened, why it happened, and what to do next.",
     ],
     closing: "Let's talk about the decision you're trying to make — we'll help you see it clearly.",
     small: "Dashboards • Predictive models • Decision clarity",
@@ -38,8 +40,9 @@ function Services() {
     title: "AI-Driven Execution",
     desc: [
       "Insight is only half the story — the real unlock is when your systems don't just tell you what to do, they go do it.",
-      "We build AI agents that sit on top of your data and take action: following up with a customer, flagging a risk before it becomes a problem, moving a task forward without someone having to remember to do it.",
-      "This isn't about replacing your team. It's about giving them a tireless partner that handles the repeatable work, so your people can spend their time on what actually needs a human.",
+      "We build AI agents that sit on top of your data and act, moving work forward without anyone having to keep it top of mind.",
+      "This isn't about replacing your team. It's about giving them a tireless partner that handles the repeatable work.",
+      "Let your team focus on the work that truly needs a human touch.",
     ],
     closing: "Let's talk about what you wish just happened automatically — and let's go build it.",
     small: "AI agents • Autonomous workflows • Action, not just insight",

@@ -577,7 +577,7 @@ h2 em{
   }
 
   .services-showcase.is-expanded .services-deck{
-    min-height:285px;
+    min-height:560px;
   }
 
   .services-showcase.is-expanded .service-card{
@@ -1122,12 +1122,15 @@ h2 em{
 /* Expanded state: a clean horizontal carousel, with neighboring cards peeking in. */
 .services-showcase.is-expanded{
   min-height:410px;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:visible;
   cursor:default;
+  display:flex;
+  flex-direction:column;
 }
 
 .services-showcase.is-expanded .services-deck{
-  min-height:340px;
+  min-height:520px;
 }
 
 .services-showcase.is-expanded .service-card{
@@ -1178,7 +1181,6 @@ h2 em{
   position:relative;
   z-index:2;
   display:block;
-  min-height:78px;
 }
 
 /* UNUSED — only referenced inside a commented-out block in Services.jsx
@@ -1218,7 +1220,7 @@ h2 em{
 .service-desc-list{
   position:relative;
   max-width:540px;
-  margin:28px 0 0 !important;
+  margin:14px 0 0 !important;
   padding:0 !important;
   list-style:none;
   display:flex;
@@ -1282,10 +1284,9 @@ h2 em{
 }
 
 .services-carousel-controls{
-  position:absolute;
-  left:50%;
-  bottom:2px;
-  transform:translateX(-50%);
+  position:relative;
+  align-self:center;
+  margin-top:24px;
   display:flex;
   align-items:center;
   gap:20px;
