@@ -3,27 +3,47 @@ import SectionBadge from "../components/SectionBadge";
 
 function Services() {
   const services = [
+    
     {
-      title: "Data Engineering",
-      desc: "Design and build scalable, reliable data pipelines and platforms.",
-      small: "Enterprise data strategy • Integration • Transformation",
-    },
-    {
-      title: "Analytics & BI",
-      desc: "Turn raw data into actionable insights with dashboards and analytics.",
-      small: "Predictive analytics • Real-time BI • Decision intelligence",
-    },
-    {
-      title: "Cloud Modernization",
-      desc: "Migrate legacy data systems to modern cloud architectures.",
-      small: "Modern platforms • Scalable architecture • Optimization",
-    },
-    {
-      title: "AI & Advanced Analytics",
-      desc: "Enable predictive analytics, ML-ready data and AI use cases.",
-      small: "3× faster reporting • DSaaS • Observability • AI readiness",
-      featured: true,
-    },
+    title: "Cloud Modernization",
+    desc: [
+      "Your business didn't stand still — your infrastructure shouldn't either. Every hour your team spends fighting infrastructure is an hour not spent on product.",
+      "We start by understanding where you are today: the systems holding you back, the costs quietly piling up, the growth you're planning for tomorrow.",
+      "Then we build the path forward — migrating, re-architecting, and optimizing your cloud environment so it works for you, not against you.",
+    ],
+    closing: "Let's talk about where you are, and where you want to be.",
+    small: "Modern platforms • Scalable architecture • Optimization",
+  },
+  {
+    title: "Data Engineering",
+    desc: [
+      "Your data already knows things you don't, it's just scattered across systems that don't talk to each other.",
+      "We start by understanding how your business actually makes decisions today, then build the pipelines, warehouses, and infrastructure that turn raw, fragmented data into something your teams can trust and act on in real time.",
+      "This isn't about collecting more data. It's about making the data you already have finally work for you.",
+    ],
+    closing: "Let's find out what your data has been trying to tell you.",
+    small: "Pipelines • Warehousing • Real-time infrastructure",
+  },
+  {
+    title: "Data Analytics",
+    desc: [
+      "Data is only valuable the moment someone actually uses it to make a decision.",
+      "We work alongside your teams to understand the questions that actually keep you up at night — then build the dashboards, models, and insights that answer them, not the ones a generic report happens to show.",
+      "This isn't about more charts. It's about clarity — knowing what happened, why it happened, and what to do next.",
+    ],
+    closing: "Let's talk about the decision you're trying to make — we'll help you see it clearly.",
+    small: "Dashboards • Predictive models • Decision clarity",
+  },
+  {
+    title: "AI-Driven Execution",
+    desc: [
+      "Insight is only half the story — the real unlock is when your systems don't just tell you what to do, they go do it.",
+      "We build AI agents that sit on top of your data and take action: following up with a customer, flagging a risk before it becomes a problem, moving a task forward without someone having to remember to do it.",
+      "This isn't about replacing your team. It's about giving them a tireless partner that handles the repeatable work, so your people can spend their time on what actually needs a human.",
+    ],
+    closing: "Let's talk about what you wish just happened automatically — and let's go build it.",
+    small: "AI agents • Autonomous workflows • Action, not just insight",
+  },
   ];
 
   const [expanded, setExpanded] = useState(false);
@@ -115,10 +135,15 @@ function Services() {
                   }}
                 >
                   <div className="service-top">
-                    <span className="service-kicker">0{index + 1}</span>
+                    {/* <span className="service-kicker">0{index + 1}</span> */}
                     <h3>{service.title}</h3>
                   </div>
-                  <p>{service.desc}</p>
+                  <ul className="service-desc-list">
+                    {service.desc.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                  <p className="service-closing">{service.closing}</p>
                   <div className="service-line" />
                   <small>{service.small}</small>
                 </article>

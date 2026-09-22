@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionBadge from "../components/SectionBadge";
+const A = `${import.meta.env.BASE_URL}assets/`;
 
 const GOOGLE_APPS_SCRIPT_URL =
   import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || "";
@@ -38,9 +39,16 @@ function Contact() {
 
   return (
     <section className="contact-section" id="contact">
+
+      {/* ================================
+          CONTACT
+      ================================= */}
+
       <div className="container contact-wrap">
 
+        {/* CONTACT COPY */}
         <div className="contact-copy reveal">
+
           <SectionBadge label="START A CONVERSATION" />
 
           <h2>
@@ -55,14 +63,20 @@ function Contact() {
           <a href="mailto:contact@synertrix.com">
             contact@synertrix.com <span>↗</span>
           </a>
+
         </div>
 
+
+        {/* CONTACT FORM */}
         <form
           className="contact-form reveal delay-1"
           onSubmit={handleSubmit}
         >
+
+          {/* NAME */}
           <label>
             Name
+
             <input
               type="text"
               name="name"
@@ -71,8 +85,11 @@ function Contact() {
             />
           </label>
 
+
+          {/* EMAIL */}
           <label>
             Work email
+
             <input
               type="email"
               name="email"
@@ -81,8 +98,23 @@ function Contact() {
             />
           </label>
 
+           {/* Contact Number */}
+          <label>
+            Contact Number
+
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              required
+            />
+          </label>
+
+
+          {/* MESSAGE */}
           <label>
             Tell us about your requirement
+
             <textarea
               name="message"
               rows="4"
@@ -90,7 +122,8 @@ function Contact() {
             />
           </label>
 
-          {/* Honeypot spam field */}
+
+          {/* HONEYPOT SPAM FIELD */}
           <input
             type="text"
             name="website"
@@ -107,12 +140,16 @@ function Contact() {
             }}
           />
 
+
+          {/* SOURCE */}
           <input
             type="hidden"
             name="source"
             value="Synertrix Website"
           />
 
+
+          {/* SUBMIT */}
           <button
             type="submit"
             disabled={status === "sending"}
@@ -121,29 +158,88 @@ function Contact() {
               ? "Sending..."
               : "Start a conversation"}
 
-            {status !== "sending" && <span>↗</span>}
+            {status !== "sending" && (
+              <span>↗</span>
+            )}
           </button>
 
+
+          {/* SUCCESS */}
           {status === "success" && (
             <p className="form-success">
               Thanks! Your enquiry has been received.
             </p>
           )}
 
+
+          {/* ERROR */}
           {status === "error" && (
             <p className="form-error">
               Something went wrong. Please try again.
             </p>
           )}
-
-          {status === "not-configured" && (
-            <p className="form-error">
-              The contact form is not configured yet. Please try again later.
-            </p>
-          )}
         </form>
 
       </div>
+
+
+      {/* ================================
+          TRUSTED PARTNERS
+      ================================= */}
+
+      <div className="container">
+
+        <div className="trusted-partners reveal">
+
+          {/* HEADER */}
+          <div className="trusted-partners-header">
+
+            <span className="trusted-partners-label">
+              TRUSTED PARTNERS
+            </span>
+
+            <h3>
+              Strategic <em>platform partnerships.</em>
+            </h3>
+
+            <p>
+              Trusted platforms that extend our capabilities across
+              business operations, automation, and enterprise transformation.
+            </p>
+
+          </div>
+
+
+          {/* LOGOS */}
+          <div className="trusted-partners-logos">
+
+            {/* ZOHO */}
+            <div className="trusted-partner-logo">
+
+              <img
+                src={A + "Tech Logos/zoho.png"}
+                alt="Zoho"
+              />
+
+            </div>
+
+
+            {/* ODOO */}
+            <div className="trusted-partner-logo">
+
+              <img
+                src={A + "Tech Logos/odoo-official-partner.png"}
+                alt="Odoo"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
   );
 }

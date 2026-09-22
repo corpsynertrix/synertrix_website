@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { navigate } from "../router";
 
 const A = `${import.meta.env.BASE_URL}assets/`;
 
 const nav = [
-  ["About", "/about"],
-  ["Services", "/services"],
-  ["Process", "/process"],
-  ["Industries", "/industries"],
-  ["Platforms", "/platforms"],
+  ["About", "about"],
+  ["Services", "services"],
+  ["Process", "process"],
+  ["Industries", "industries"],
+  ["Platforms", "platforms"],
 ];
+
+function scrollToSection(id, setOpen) {
+  setOpen(false);
+
+  const section = document.getElementById(id);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -28,15 +40,19 @@ function Header() {
     <header className="site-header" id="siteHeader">
       <div className="container nav-wrap">
 
-        {/* Logo / Home */}
+        {/* LOGO */}
         <a
           href="/"
           className="wordmark"
           aria-label="Synertrix home"
-          onClick={(event) => {
-            event.preventDefault();
-            navigate("/");
+          onClick={(e) => {
+            e.preventDefault();
             setOpen(false);
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         >
           <img
@@ -47,53 +63,52 @@ function Header() {
           />
         </a>
 
-        {/* Mobile menu button */}
+        {/* MOBILE MENU */}
         <button
           className={"menu-toggle" + (open ? " active" : "")}
           id="menuToggle"
           type="button"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => setOpen((v) => !v)}
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        {/* Navigation */}
+        {/* NAVIGATION */}
         <nav
           className={"main-nav" + (open ? " open" : "")}
           id="mainNav"
           aria-label="Main navigation"
         >
-          {nav.map(([label, path]) => (
+          {nav.map(([label, id]) => (
             <a
-              key={path}
-              href={path}
-              onClick={(event) => {
-                event.preventDefault();
-                navigate(path);
-                setOpen(false);
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(id, setOpen);
               }}
             >
               {label}
             </a>
           ))}
 
-          {/* Contact */}
+          {/* CONTACT */}
           <a
-            href="/contact"
+            href="#contact"
             className="nav-contact"
-            onClick={(event) => {
-              event.preventDefault();
-              navigate("/contact");
-              setOpen(false);
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("contact", setOpen);
             }}
           >
             Talk to us <span>↗</span>
           </a>
         </nav>
+
       </div>
     </header>
   );
