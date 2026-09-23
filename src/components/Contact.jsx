@@ -104,7 +104,7 @@ function Contact() {
 
             <input
               type="tel"
-              name="phone"
+              name="contact"
               autoComplete="tel"
               required
             />

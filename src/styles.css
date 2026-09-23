@@ -1371,6 +1371,35 @@ h2 em{
     padding:26px 24px 20px;
     border-radius:18px
   }
+
+  /* Carousel: stack all cards in one grid cell so the deck grows to the
+     tallest card and the controls sit below it instead of overlapping.
+     Must come after the base .services-showcase rules to override them. */
+  .services-showcase.is-expanded{
+    min-height:0;
+  }
+
+  .services-showcase.is-expanded .services-deck{
+    display:grid;
+    min-height:0;
+    padding-bottom:8px;
+  }
+
+  .services-showcase.is-expanded .service-card{
+    position:relative;
+    grid-area:1 / 1;
+    justify-self:start;
+    width:84%;
+    max-width:84%;
+    min-height:245px;
+    padding:28px 25px 24px;
+    border-radius:30px;
+  }
+
+  .services-carousel-controls{
+    gap:13px;
+    margin-top:20px;
+  }
 }
 
 
